@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Банная лихорадка</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>Банная лихорадка</h1>
+            <div class="game-stats">
+                <div class="level">Уровень: <span id="level">1</span></div>
+                <div class="score">Веники: <span id="score">0</span>/<span id="requiredBrooms">2</span></div>
+                <div class="beer">Пиво: <span id="beerCount">0</span>/<span id="requiredBeer">5</span></div>
+                <div class="time">Время: <span id="time">20</span>с</div>
+                <div class="heat">Жар: <span id="heat">0</span>%</div>
+            </div>
+        </div>
+        
+        <div class="game-canvas-container">
+            <canvas id="gameCanvas" width="800" height="500"></canvas>
+            
+            <div id="gameOver" class="game-over hidden">
+                <h2>Угар!</h2>
+                <p>Мужик не выдержал банного жара!</p>
+                <p>Собрано веников: <span id="finalBrooms">0</span></p>
+                <p>Выпито пива: <span id="finalBeer">0</span></p>
+                <button id="restartButton">В парилку снова!</button>
+            </div>
+            
+            <div id="levelComplete" class="level-complete hidden">
+                <h2>Уровень пройден!</h2>
+                <p>Отлично! Готовим следующий уровень...</p>
+                <button id="nextLevelButton">Следующий уровень!</button>
+            </div>
+
+            <div id="gameComplete" class="level-complete hidden">
+                <h2>Победа!</h2>
+                <p>Все уровни пройдены! Банный мастер!</p>
+                <button id="completeRestartButton">Играть сначала</button>
+            </div>
+            
+            <div id="startScreen" class="start-screen">
+                <h2>Банная лихорадка</h2>
+                <div class="rules">
+                    <p><strong>Правила игры:</strong></p>
+                    <ul>
+                        <li>Всего 3 уровня сложности</li>
+                        <li>На каждый уровень дается 20 секунд</li>
+                        <li>Собирай веники и пей пиво</li>
+                        <li>Пиво охлаждает и добавляет +5 секунд!</li>
+                        <li>Жар в бане постоянно растет</li>
+                        <li>Если не успеешь - мужик угарит!</li>
+                    </ul>
+                    <p><strong>Цели по уровням:</strong></p>
+                    <ul>
+                        <li>Уровень 1: 2 веника + 5 пива</li>
+                        <li>Уровень 2: 3 веника + 4 пива</li>
+                        <li>Уровень 3: 4 веника + 3 пива</li>
+                    </ul>
+                </div>
+                <button id="startButton">В баню!</button>
+            </div>
+        </div>
+        
+        <div class="game-controls">
+            <button id="pauseButton">Пауза</button>
+            <button id="restartGameButton">Начать заново</button>
+        </div>
+        
+        <div class="instructions">
+            Управление: Стрелки ← → для движения, Пробел для прыжка
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
